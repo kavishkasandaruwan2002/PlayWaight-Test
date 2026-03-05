@@ -35,7 +35,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="min-h-screen py-32 px-6 max-w-7xl mx-auto w-full dark:bg-slate-950 luxury-mesh">
+        <div className="min-h-screen py-32 px-6 max-w-7xl mx-auto w-full dark:bg-slate-950 luxury-mesh" data-testid="login-success-view">
             <div className="mb-16 space-y-4">
                 <motion.div
                     initial={{ width: 0 }}

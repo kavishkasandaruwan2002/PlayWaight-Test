@@ -5,7 +5,7 @@ test.describe('Smart Travel Booking - Authentication', () => {
     test('User can register and login successfully', async ({ page }) => {
         // Given: The user is on the registration page
         await page.goto('/register');
-        await expect(page.getByTestId('auth-title')).toHaveText('Create an Account');
+        await expect(page.getByTestId('auth-title')).toHaveText(/Join the Elite/);
 
         // When: The user fills in the registration form and submits
         await page.getByTestId('register-name-input').fill('Alice Travel');

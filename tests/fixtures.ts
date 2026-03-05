@@ -1,7 +1,11 @@
-import { test as base, expect } from '@playwright/test';
+import { test as base, expect, type Page } from '@playwright/test';
+
+type MyFixtures = {
+    loggedInPage: Page;
+};
 
 // Define a custom fixture for a logged-in user
-export const test = base.extend({
+export const test = base.extend<MyFixtures>({
     loggedInPage: async ({ page }, use) => {
         // Navigate to login
         await page.goto('/login');

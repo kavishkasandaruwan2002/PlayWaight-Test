@@ -46,7 +46,7 @@ export default defineConfig({
     webServer: [
         {
             command: 'cd server && npm run start',
-            url: 'http://localhost:5000/api/hotels',
+            url: 'http://localhost:5005/api/hotels',
             reuseExistingServer: !process.env.CI,
         },
         {

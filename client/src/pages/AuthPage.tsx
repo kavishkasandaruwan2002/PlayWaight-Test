@@ -109,7 +109,7 @@ const AuthPage = ({ type }: AuthPageProps) => {
                     className="w-full max-w-[480px] space-y-12"
                 >
                     <div className="space-y-4">
-                        <h2 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter">
+                        <h2 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter" data-testid="auth-title">
                             {type === 'login' ? 'Welcome Back' : 'Join the Elite'}
                             <span className="text-blue-600">.</span>
                         </h2>
