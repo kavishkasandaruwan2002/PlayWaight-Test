@@ -58,6 +58,22 @@ This project is a modern, full-stack web application designed to demonstrate aut
 
 ---
 
+## 🚀 CI/CD Pipeline
+
+This project includes a **GitHub Actions** workflow for automated CI/CD.
+
+### Features:
+- **Automated Testing**: Runs Playwright E2E tests on every push and pull request.
+- **Dependency Management**: Installs and caches dependencies for faster builds.
+- **Linting**: Checks the code quality of the frontend.
+- **Build Verification**: Ensures the client application builds successfully.
+- **Database Integration**: Uses a MongoDB service container for testing the backend.
+- **Artifacts**: Uploads Playwright test reports (with screenshots/videos on failure) for easy debugging.
+
+The workflow configuration can be found in [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+
+---
+
 ## 📂 Project Structure
 ```text
 ├── client/          # React Frontend
