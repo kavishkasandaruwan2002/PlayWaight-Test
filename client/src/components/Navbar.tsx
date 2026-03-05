@@ -57,6 +57,7 @@ const Navbar = () => {
                             <Link
                                 key={link.path}
                                 to={link.path}
+                                data-testid={`nav-${link.name.toLowerCase()}`}
                                 className={`transition-all relative group ${location.pathname === link.path
                                     ? 'text-blue-600'
                                     : scrolled ? 'text-slate-500 hover:text-blue-600' : 'text-white/70 hover:text-white'
@@ -138,7 +139,13 @@ const Navbar = () => {
                         className="md:hidden mt-4 mx-6 overflow-hidden glass rounded-[32px] shadow-4xl flex flex-col gap-2 p-8 border border-white/20"
                     >
                         {navLinks.map((link) => (
-                            <Link key={link.path} to={link.path} className="px-6 py-4 font-black uppercase tracking-widest text-slate-900 dark:text-white" onClick={() => setIsOpen(false)}>
+                            <Link
+                                key={link.path}
+                                to={link.path}
+                                data-testid={`nav-mobile-${link.name.toLowerCase()}`}
+                                className="px-6 py-4 font-black uppercase tracking-widest text-slate-900 dark:text-white"
+                                onClick={() => setIsOpen(false)}
+                            >
                                 {link.name}
                             </Link>
                         ))}

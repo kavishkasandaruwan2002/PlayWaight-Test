@@ -49,7 +49,7 @@ const Home = () => {
                             <span className="tracking-widest uppercase text-xs">Reimagined Travel 2026</span>
                         </motion.div>
 
-                        <h1 className="text-6xl md:text-[140px] font-black text-white leading-[0.85] tracking-tighter drop-shadow-2xl italic">
+                        <h1 className="text-6xl md:text-[140px] font-black text-white leading-[0.85] tracking-tighter drop-shadow-2xl italic" data-testid="hero-title">
                             TRAVEL <br /><span className="text-blue-500 outline-text">SMART</span>ER
                         </h1>
 
