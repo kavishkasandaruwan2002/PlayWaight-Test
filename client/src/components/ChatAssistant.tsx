@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MessageSquare, X, Send, Bot, User, Sparkles, Zap, Shield } from 'lucide-react';
+import { useState, type FormEvent } from 'react';
+import { MessageSquare, X, Send, Bot, User, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ChatAssistant = () => {
@@ -9,7 +9,7 @@ const ChatAssistant = () => {
     ]);
     const [input, setInput] = useState('');
 
-    const handleSend = (e: React.FormEvent) => {
+    const handleSend = (e: FormEvent) => {
         e.preventDefault();
         if (!input.trim()) return;
 
@@ -41,7 +41,7 @@ const ChatAssistant = () => {
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <AnimatePresence mode="wait">
                         {isOpen ? (
-                            <motion.div key="close" initial={{ scale: 0, opacity: 0 }} border-white animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0, opacity: 0 }}>
+                            <motion.div key="close" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0, opacity: 0 }}>
                                 <X size={32} strokeWidth={3} />
                             </motion.div>
                         ) : (
@@ -100,8 +100,8 @@ const ChatAssistant = () => {
                                             {msg.isBot ? <Bot size={20} /> : <User size={20} />}
                                         </div>
                                         <div className={`p-5 rounded-[28px] text-sm font-medium leading-relaxed shadow-xl ${msg.isBot
-                                                ? 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none border border-slate-100 dark:border-slate-700'
-                                                : 'bg-blue-600 text-white rounded-tr-none'
+                                            ? 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none border border-slate-100 dark:border-slate-700'
+                                            : 'bg-blue-600 text-white rounded-tr-none'
                                             }`}>
                                             {msg.text}
                                         </div>

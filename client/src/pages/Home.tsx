@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
     Search, MapPin, Calendar, Users, Star, ArrowRight,
-    ShieldCheck, Zap, Globe, Heart, Compass, Sparkles,
-    Award, Clock, Phone, Cloud
+    Zap, Globe, Heart, Compass, Sparkles,
+    Award
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import api from '../api/api';
+import type { Hotel } from '../types';
 
 const Home = () => {
-    const [featuredHotels, setFeaturedHotels] = useState<any[]>([]);
+    const [featuredHotels, setFeaturedHotels] = useState<Hotel[]>([]);
     const { scrollY } = useScroll();
     const heroY = useTransform(scrollY, [0, 500], [0, 250]);
     const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -245,7 +246,11 @@ const Home = () => {
 };
 
 // Simple Bot icon since it might be missing
-const Bot = ({ size, className }: any) => (
+interface BotProps {
+    size: number;
+    className?: string;
+}
+const Bot = ({ size, className }: BotProps) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
         <rect x="3" y="11" width="18" height="10" rx="2" />
         <circle cx="12" cy="5" r="2" />

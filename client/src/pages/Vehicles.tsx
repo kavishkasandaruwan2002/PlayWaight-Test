@@ -4,12 +4,14 @@ import { Car, Search, Calendar, X, CreditCard, Zap, Shield, Fuel, Users } from '
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
+import type { Vehicle } from '../types';
 
 const Vehicles = () => {
-    const [vehicles, setVehicles] = useState<any[]>([]);
+    const [vehicles, setVehicles] = useState<Vehicle[]>([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(true);
-    const [selectedVehicle, setSelectedVehicle] = useState<any>(null);
+    const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
     const [bookingDate, setBookingDate] = useState('');
     const [isBooking, setIsBooking] = useState(false);
     const { user } = useAuth();
@@ -22,7 +24,7 @@ const Vehicles = () => {
         try {
             const { data } = await api.get('/vehicles');
             setVehicles(data);
-        } catch (error) {
+        } catch {
             toast.error('Failed to load vehicles');
         } finally {
             setLoading(false);
@@ -39,6 +41,7 @@ const Vehicles = () => {
             toast.error('You must login to book');
             return;
         }
+        if (!selectedVehicle) return;
         if (!bookingDate) {
             toast.error('Please select a date');
             return;
@@ -50,8 +53,12 @@ const Vehicles = () => {
             toast.success(data.message);
             setSelectedVehicle(null);
             setBookingDate('');
-        } catch (error: any) {
-            toast.error(error.response?.data?.message || 'Booking failed');
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                toast.error(error.response?.data?.message || 'Booking failed');
+            } else {
+                toast.error('An unexpected error occurred');
+            }
         } finally {
             setIsBooking(false);
         }

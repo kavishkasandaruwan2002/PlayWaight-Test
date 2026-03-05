@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { PlaneTakeoff, User, LogOut, Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -58,8 +58,8 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`transition-all relative group ${location.pathname === link.path
-                                        ? 'text-blue-600'
-                                        : scrolled ? 'text-slate-500 hover:text-blue-600' : 'text-white/70 hover:text-white'
+                                    ? 'text-blue-600'
+                                    : scrolled ? 'text-slate-500 hover:text-blue-600' : 'text-white/70 hover:text-white'
                                     }`}
                             >
                                 {link.name}
@@ -85,8 +85,8 @@ const Navbar = () => {
                                 <Link
                                     to="/dashboard"
                                     className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-black transition-all border ${scrolled
-                                            ? 'bg-blue-600/5 text-blue-600 border-blue-600/20 hover:bg-blue-600/10'
-                                            : 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                                        ? 'bg-blue-600/5 text-blue-600 border-blue-600/20 hover:bg-blue-600/10'
+                                        : 'bg-white/10 text-white border-white/20 hover:bg-white/20'
                                         }`}
                                     data-testid="nav-dashboard"
                                 >

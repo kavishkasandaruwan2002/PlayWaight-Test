@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Hotel, Car, CheckCircle2, User as UserIcon, Mail, Award, TrendingUp, Compass, Clock } from 'lucide-react';
 import api from '../api/api';
-import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import type { Profile, Booking } from '../types';
 
 const Dashboard = () => {
-    const { user } = useAuth();
-    const [profile, setProfile] = useState<any>(null);
+    const [profile, setProfile] = useState<Profile | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Dashboard = () => {
         try {
             const { data } = await api.get('/user/profile');
             setProfile(data);
-        } catch (error) {
+        } catch {
             toast.error('Failed to load dashboard');
         } finally {
             setLoading(false);
@@ -95,8 +95,8 @@ const Dashboard = () => {
                     {/* Quick Stats */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         {[
-                            { label: "Active Stays", val: profile?.bookings?.filter((b: any) => b.hotel).length || 0, icon: Hotel },
-                            { label: "Fleet Rentals", val: profile?.bookings?.filter((b: any) => b.vehicle).length || 0, icon: Car },
+                            { label: "Active Stays", val: profile?.bookings?.filter((b: Booking) => b.hotel).length || 0, icon: Hotel },
+                            { label: "Fleet Rentals", val: profile?.bookings?.filter((b: Booking) => b.vehicle).length || 0, icon: Car },
                             { label: "Elite Credits", val: "$240", icon: TrendingUp }
                         ].map((item, i) => (
                             <div key={i} className="luxury-card p-8 flex items-center gap-6 group hover:border-blue-500/30 transition-all">
@@ -121,7 +121,7 @@ const Dashboard = () => {
 
                         <div className="space-y-6" data-testid="dashboard-bookings-list">
                             {(profile?.bookings?.length || 0) > 0 ? (
-                                profile.bookings.map((booking: any, index: number) => (
+                                profile!.bookings.map((booking: Booking, index: number) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, scale: 0.95 }}

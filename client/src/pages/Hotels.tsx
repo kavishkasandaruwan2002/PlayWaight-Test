@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Star, Search, Calendar, Check, X, CreditCard, User, Sparkles, Shield, Coffee, Wifi } from 'lucide-react';
+import { MapPin, Star, Search, Calendar, X, CreditCard, Shield, Coffee, Wifi } from 'lucide-react';
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
+import type { Hotel } from '../types';
 
 const Hotels = () => {
-    const [hotels, setHotels] = useState<any[]>([]);
+    const [hotels, setHotels] = useState<Hotel[]>([]);
     const [loading, setLoading] = useState(true);
-    const [selectedHotel, setSelectedHotel] = useState<any>(null);
+    const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
     const [bookingDate, setBookingDate] = useState('');
     const [isBooking, setIsBooking] = useState(false);
     const { user } = useAuth();
@@ -21,7 +23,7 @@ const Hotels = () => {
         try {
             const { data } = await api.get('/hotels');
             setHotels(data);
-        } catch (error) {
+        } catch {
             toast.error('Failed to load hotels');
         } finally {
             setLoading(false);
@@ -33,6 +35,7 @@ const Hotels = () => {
             toast.error('You must login to book');
             return;
         }
+        if (!selectedHotel) return;
         if (!bookingDate) {
             toast.error('Please select a date');
             return;
@@ -44,8 +47,12 @@ const Hotels = () => {
             toast.success(data.message);
             setSelectedHotel(null);
             setBookingDate('');
-        } catch (error: any) {
-            toast.error(error.response?.data?.message || 'Booking failed');
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                toast.error(error.response?.data?.message || 'Booking failed');
+            } else {
+                toast.error('An unexpected error occurred');
+            }
         } finally {
             setIsBooking(false);
         }

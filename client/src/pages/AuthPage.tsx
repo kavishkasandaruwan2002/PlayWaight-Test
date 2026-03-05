@@ -1,10 +1,11 @@
-import React, { useState, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Mail, Lock, User, Eye, EyeOff, CheckCircle2, AlertCircle, Sparkles, Plane, Github, Chrome } from 'lucide-react';
+import { Mail, Lock, User, Eye, EyeOff, Sparkles, Plane, Github, Chrome } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-hot-toast';
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
+import axios from 'axios';
 
 interface AuthPageProps {
     type: 'login' | 'register';
@@ -30,8 +31,12 @@ const AuthPage = ({ type }: AuthPageProps) => {
             login(data.user, data.token);
             toast.success(type === 'login' ? `Welcome back, ${data.user.name}!` : 'Account created successfully!');
             navigate('/dashboard');
-        } catch (error: any) {
-            toast.error(error.response?.data?.message || 'Authentication failed');
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                toast.error(error.response?.data?.message || 'Authentication failed');
+            } else {
+                toast.error('An unexpected error occurred');
+            }
         } finally {
             setIsLoading(false);
         }

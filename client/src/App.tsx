@@ -1,6 +1,6 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import type { ReactNode } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Hotels from './pages/Hotels';
@@ -11,7 +11,7 @@ import ChatAssistant from './components/ChatAssistant';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { user, loading } = useAuth();
   if (loading) return null;
   return user ? <>{children}</> : <Navigate to="/login" />;
