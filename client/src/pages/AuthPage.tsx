@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Mail, Lock, User, Eye, EyeOff, Sparkles, Plane, Github, Chrome } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
