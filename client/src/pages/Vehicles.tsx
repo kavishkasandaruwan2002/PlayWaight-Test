@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Car, Bike, Search, Calendar, Check, X, CreditCard, Star, MapPin, Zap, Shield, Fuel } from 'lucide-react';
+import { Car, Search, Calendar, X, CreditCard, Zap, Shield, Fuel, Users } from 'lucide-react';
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
 
 const Vehicles = () => {
     const [vehicles, setVehicles] = useState<any[]>([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(true);
     const [selectedVehicle, setSelectedVehicle] = useState<any>(null);
     const [bookingDate, setBookingDate] = useState('');
@@ -27,6 +28,11 @@ const Vehicles = () => {
             setLoading(false);
         }
     };
+
+    const filteredVehicles = vehicles.filter(vehicle =>
+        vehicle.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        vehicle.type.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     const handleBook = async () => {
         if (!user) {
@@ -71,6 +77,8 @@ const Vehicles = () => {
                         type="text"
                         placeholder="Search for your next drive..."
                         className="flex-1 bg-transparent border-none outline-none py-4 font-black transition-all dark:text-white placeholder:text-slate-400"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                         data-testid="vehicle-search-input"
                     />
                 </div>
@@ -83,7 +91,7 @@ const Vehicles = () => {
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" data-testid="vehicle-grid">
-                    {vehicles.map((vehicle, index) => (
+                    {filteredVehicles.map((vehicle, index) => (
                         <motion.div
                             key={vehicle._id}
                             initial={{ opacity: 0, y: 50 }}

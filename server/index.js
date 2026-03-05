@@ -73,7 +73,7 @@ const seedData = async () => {
   if (vehicleCount === 0) {
     await Vehicle.insertMany([
       { name: 'Toyota Camry', type: 'Car', price_per_day: 50, image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=500&auto=format&fit=crop&q=60', available: true },
-      { name: 'Honda CR-V', type: 'SUV', price_per_day: 80, image: 'https://images.unsplash.com/photo-1533473359331-0135ed155851?w=500&auto=format&fit=crop&q=60', available: true },
+      { name: 'Honda CR-V', type: 'SUV', price_per_day: 80, image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&auto=format&fit=crop&q=60', available: true },
       { name: 'Vespa Scooter', type: 'Bike', price_per_day: 25, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60', available: true }
     ]);
   }
