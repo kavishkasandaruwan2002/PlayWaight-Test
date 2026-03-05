@@ -1,0 +1,14 @@
+{
+    "name": "smart-travel-booking-platform",
+    "version": "1.0.0",
+    "scripts": {
+        "install:all": "npm install --legacy-peer-deps && cd client && npm install --legacy-peer-deps && cd ../server && npm install --legacy-peer-deps",
+        "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\"",
+        "test": "npx playwright test"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.44.1",
+        "@types/node": "^20.14.2",
+        "concurrently": "^8.2.2"
+    }
+}
