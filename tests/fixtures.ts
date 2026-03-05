@@ -7,17 +7,18 @@ type MyFixtures = {
 // Define a custom fixture for a logged-in user
 export const test = base.extend<MyFixtures>({
     loggedInPage: async ({ page }, use) => {
-        // Navigate to login
+        console.log('Fixture: Navigating to /login');
         await page.goto('/login');
-
-        // Perform login
+        console.log('Fixture: Filling credentials');
         await page.getByTestId('auth-email-input').fill('john@example.com');
         await page.getByTestId('auth-password-input').fill('password123');
+        console.log('Fixture: Clicking login');
         await page.getByTestId('auth-submit-btn').click();
 
         // Wait for success and redirection
-        await expect(page.getByTestId('login-success-view')).toBeVisible();
         await expect(page).toHaveURL('/dashboard');
+        await expect(page.getByTestId('dashboard-title')).toBeVisible();
+        await expect(page.getByTestId('login-success-view')).toBeVisible();
 
         // Provide the page to the test
         await use(page);

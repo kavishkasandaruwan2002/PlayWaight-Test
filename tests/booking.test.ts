@@ -7,7 +7,7 @@ test.describe('Smart Travel Booking - Hotel & Vehicle Reservations', () => {
         await loggedInPage.goto('/hotels');
 
         // When: The user searches for a hotel and clicks 'Book Now'
-        await expect(loggedInPage.getByTestId('hotel-page-title')).toHaveText(/TOP HOTELS/);
+        await expect(loggedInPage.getByTestId('hotel-page-title')).toHaveText(/LUXURY STAYS/);
         await loggedInPage.getByTestId('book-hotel-btn-0').click();
 
         // Then: A booking modal should open

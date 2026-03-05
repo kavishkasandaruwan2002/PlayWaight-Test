@@ -77,8 +77,20 @@ const seedData = async () => {
       { name: 'Vespa Scooter', type: 'Bike', price_per_day: 25, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60', available: true }
     ]);
   }
+
+  const testUser = await User.findOne({ email: 'john@example.com' });
+  if (!testUser) {
+    const hashedPassword = await bcrypt.hash('password123', 10);
+    await User.create({
+      name: 'John Doe',
+      email: 'john@example.com',
+      password: hashedPassword,
+      role: 'user',
+      bookings: []
+    });
+  }
 };
-seedData();
+seedData().then(() => console.log('Seed data initialized')).catch(err => console.error('Seeding error:', err));
 
 // --- Auth Routes ---
 app.post('/api/auth/register', async (req, res) => {
@@ -90,8 +102,10 @@ app.post('/api/auth/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
+    console.log(`User registered: ${email}`);
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
+    console.error(`Registration error for ${req.body.email}:`, error);
     res.status(500).json({ message: error.message });
   }
 });

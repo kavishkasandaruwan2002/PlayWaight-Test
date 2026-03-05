@@ -9,7 +9,8 @@ test.describe('Smart Travel Booking - Authentication', () => {
 
         // When: The user fills in the registration form and submits
         await page.getByTestId('register-name-input').fill('Alice Travel');
-        await page.getByTestId('auth-email-input').fill('alice@travel.com');
+        const uniqueEmail = `alice-${Date.now()}@travel.com`;
+        await page.getByTestId('auth-email-input').fill(uniqueEmail);
         await page.getByTestId('auth-password-input').fill('password123');
         await page.getByTestId('auth-submit-btn').click();
 
@@ -17,13 +18,14 @@ test.describe('Smart Travel Booking - Authentication', () => {
         await expect(page).toHaveURL('/login');
 
         // When: The user logs in with the new credentials
-        await page.getByTestId('auth-email-input').fill('alice@travel.com');
+        await page.getByTestId('auth-email-input').fill(uniqueEmail);
         await page.getByTestId('auth-password-input').fill('password123');
         await page.getByTestId('auth-submit-btn').click();
 
         // Then: Successful login should redirect to the dashboard
-        await expect(page.getByTestId('login-success-view')).toBeVisible();
         await expect(page).toHaveURL('/dashboard');
+        await expect(page.getByTestId('dashboard-title')).toHaveText('USER PORTAL');
+        await expect(page.getByTestId('login-success-view')).toBeVisible();
         await expect(page.getByTestId('user-profile-name')).toHaveText('Alice Travel');
     });
 

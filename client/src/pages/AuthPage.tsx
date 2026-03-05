@@ -22,15 +22,21 @@ const AuthPage = ({ type }: AuthPageProps) => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        setIsLoading(true);
         const endpoint = type === 'login' ? '/auth/login' : '/auth/register';
+        console.log('Submitting:', type, email, endpoint);
+        setIsLoading(true);
         const payload = type === 'login' ? { email, password } : { name, email, password };
 
         try {
             const { data } = await api.post(endpoint, payload);
-            login(data.user, data.token);
-            toast.success(type === 'login' ? `Welcome back, ${data.user.name}!` : 'Account created successfully!');
-            navigate('/dashboard');
+            if (type === 'login') {
+                login(data.user, data.token);
+                toast.success(`Welcome back, ${data.user.name}!`);
+                navigate('/dashboard');
+            } else {
+                toast.success('Account created! Please log in.');
+                navigate('/login');
+            }
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 toast.error(error.response?.data?.message || 'Authentication failed');

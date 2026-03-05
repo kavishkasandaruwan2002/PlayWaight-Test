@@ -42,7 +42,7 @@ const Dashboard = () => {
                     animate={{ width: 60 }}
                     className="h-1.5 bg-blue-600 rounded-full"
                 />
-                <h1 className="text-6xl font-black text-slate-950 dark:text-white tracking-tighter">USER PORTAL</h1>
+                <h1 className="text-6xl font-black text-slate-950 dark:text-white tracking-tighter" data-testid="dashboard-title">USER PORTAL</h1>
                 <p className="text-slate-500 font-medium max-w-md">Manage your elite reservations and platform status.</p>
             </div>
 
