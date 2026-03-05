@@ -8,8 +8,9 @@ import Vehicles from './pages/Vehicles';
 import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import ChatAssistant from './components/ChatAssistant';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { ThemeProvider } from './context/ThemeContext';
+import { AuthProvider } from './context/AuthProvider';
+import { useAuth } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeProvider';
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { user, loading } = useAuth();

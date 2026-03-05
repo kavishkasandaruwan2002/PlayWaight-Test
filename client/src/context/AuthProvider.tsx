@@ -1,14 +1,6 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
+import { AuthContext } from './AuthContext';
 import type { User } from '../types';
-
-interface AuthContextType {
-    user: User | null;
-    login: (userData: User, token: string) => void;
-    logout: () => void;
-    loading: boolean;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
@@ -22,8 +14,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                 setUser(JSON.parse(storedUser));
             }
         } catch {
-            // If parsing fails, user remains null.
-            // This handles cases where localStorage might contain invalid JSON.
             console.error("Failed to parse user data from localStorage.");
         } finally {
             setLoading(false);
@@ -47,10 +37,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             {children}
         </AuthContext.Provider>
     );
-};
-
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (!context) throw new Error('useAuth must be used within AuthProvider');
-    return context;
 };
