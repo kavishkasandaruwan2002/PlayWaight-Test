@@ -1,0 +1,32 @@
+﻿[
+  {
+    "_id": "69a930587a6aca89a3b3d08e",
+    "name": "Grand Luxury Resort",
+    "location": "Sri Lanka",
+    "price": 250,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&auto=format&fit=crop&q=60",
+    "rating": 4.8,
+    "description": "A beautiful luxury resort near the beach.",
+    "__v": 0
+  },
+  {
+    "_id": "69a930587a6aca89a3b3d08f",
+    "name": "Mountain View Inn",
+    "location": "Sri Lanka",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format&fit=crop&q=60",
+    "rating": 4.2,
+    "description": "Relaxing stay in the mist-covered mountains.",
+    "__v": 0
+  },
+  {
+    "_id": "69a930587a6aca89a3b3d090",
+    "name": "Urban City Hotel",
+    "location": "Sri Lanka",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1551882547-ff43c61fe408?w=500&auto=format&fit=crop&q=60",
+    "rating": 4,
+    "description": "Conveniently located in the heart of Colombo.",
+    "__v": 0
+  }
+]

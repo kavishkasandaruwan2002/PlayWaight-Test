@@ -66,14 +66,14 @@ const Vehicles = () => {
 
     return (
         <div className="min-h-screen py-32 px-6 max-w-7xl mx-auto w-full dark:bg-slate-950 luxury-mesh">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-12">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-12">
                 <div className="space-y-4">
                     <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: 60 }}
                         className="h-1.5 bg-blue-600 rounded-full"
                     />
-                    <h1 className="text-6xl font-black text-slate-950 dark:text-white tracking-tighter" data-testid="vehicle-page-title">
+                    <h1 className="text-5xl md:text-6xl font-black text-slate-950 dark:text-white tracking-tighter" data-testid="vehicle-page-title">
                         ELITE FLEET
                     </h1>
                     <p className="text-slate-500 font-medium max-w-md">Precision engineering meet five-star comfort. Experience the road differently.</p>

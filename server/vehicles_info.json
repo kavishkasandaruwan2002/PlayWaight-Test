@@ -1,0 +1,29 @@
+﻿[
+  {
+    "_id": "69a930587a6aca89a3b3d094",
+    "name": "Toyota Camry",
+    "type": "Car",
+    "price_per_day": 50,
+    "image": "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=500&auto=format&fit=crop&q=60",
+    "available": true,
+    "__v": 0
+  },
+  {
+    "_id": "69a930587a6aca89a3b3d095",
+    "name": "Honda CR-V",
+    "type": "SUV",
+    "price_per_day": 80,
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ed155851?w=500&auto=format&fit=crop&q=60",
+    "available": true,
+    "__v": 0
+  },
+  {
+    "_id": "69a930587a6aca89a3b3d096",
+    "name": "Vespa Scooter",
+    "type": "Bike",
+    "price_per_day": 25,
+    "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60",
+    "available": true,
+    "__v": 0
+  }
+]

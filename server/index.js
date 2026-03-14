@@ -63,18 +63,18 @@ const seedData = async () => {
   const hotelCount = await Hotel.countDocuments();
   if (hotelCount === 0) {
     await Hotel.insertMany([
-      { name: 'Grand Luxury Resort', location: 'Sri Lanka', price: 250, image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&auto=format&fit=crop&q=60', rating: 4.8, description: 'A beautiful luxury resort near the beach.' },
-      { name: 'Mountain View Inn', location: 'Sri Lanka', price: 120, image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format&fit=crop&q=60', rating: 4.2, description: 'Relaxing stay in the mist-covered mountains.' },
-      { name: 'Urban City Hotel', location: 'Sri Lanka', price: 90, image: 'https://images.unsplash.com/photo-1551882547-ff43c61fe408?w=500&auto=format&fit=crop&q=60', rating: 4.0, description: 'Conveniently located in the heart of Colombo.' }
+      { name: 'Grand Luxury Resort', location: 'Sri Lanka', price: 250, image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500', rating: 4.8, description: 'A beautiful luxury resort near the beach.' },
+      { name: 'Mountain View Inn', location: 'Sri Lanka', price: 120, image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500', rating: 4.2, description: 'Relaxing stay in the mist-covered mountains.' },
+      { name: 'Urban City Hotel', location: 'Sri Lanka', price: 90, image: 'https://images.unsplash.com/photo-1688659810075-dcd1ab9c9314?w=500', rating: 4.0, description: 'Conveniently located in the heart of Colombo.' }
     ]);
   }
 
   const vehicleCount = await Vehicle.countDocuments();
   if (vehicleCount === 0) {
     await Vehicle.insertMany([
-      { name: 'Toyota Camry', type: 'Car', price_per_day: 50, image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=500&auto=format&fit=crop&q=60', available: true },
-      { name: 'Honda CR-V', type: 'SUV', price_per_day: 80, image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&auto=format&fit=crop&q=60', available: true },
-      { name: 'Vespa Scooter', type: 'Bike', price_per_day: 25, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60', available: true }
+      { name: 'Toyota Camry', type: 'Car', price_per_day: 50, image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=500', available: true },
+      { name: 'Honda CR-V', type: 'SUV', price_per_day: 80, image: 'https://images.unsplash.com/photo-1681697390363-1142eb46b76d?w=500', available: true },
+      { name: 'Vespa Scooter', type: 'Bike', price_per_day: 25, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500', available: true }
     ]);
   }
 

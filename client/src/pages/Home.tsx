@@ -49,7 +49,7 @@ const Home = () => {
                             <span className="tracking-widest uppercase text-xs">Reimagined Travel 2026</span>
                         </motion.div>
 
-                        <h1 className="text-6xl md:text-[140px] font-black text-white leading-[0.85] tracking-tighter drop-shadow-2xl italic" data-testid="hero-title">
+                        <h1 className="text-5xl sm:text-7xl md:text-[140px] font-black text-white leading-[0.85] tracking-tighter drop-shadow-2xl italic" data-testid="hero-title">
                             TRAVEL <br /><span className="text-blue-500 outline-text">SMART</span>ER
                         </h1>
 
@@ -158,14 +158,14 @@ const Home = () => {
 
             {/* Featured Destinations Showcase */}
             <section className="py-40 px-6 max-w-7xl mx-auto w-full">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
                     <div className="space-y-6">
                         <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: 80 }}
                             className="h-[6px] bg-blue-600 rounded-full"
                         />
-                        <h2 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white leading-[0.85] tracking-tighter">
+                        <h2 className="text-5xl sm:text-6xl md:text-8xl font-black text-slate-900 dark:text-white leading-[0.85] tracking-tighter">
                             BEYOND <br />EXPECTATIONS
                         </h2>
                     </div>

@@ -28,28 +28,30 @@ body {
   @apply overflow-x-hidden;
 }
 
-.glass {
-  @apply backdrop-blur-xl transition-all duration-300;
-  background-color: rgba(var(--background), 0.7);
-  border: 1px solid rgba(var(--border), 0.5);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-}
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl transition-all duration-300;
+    background-color: rgba(var(--background), 0.7);
+    border: 1px solid rgba(var(--border), 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  }
 
-.dark .glass {
-  background-color: rgba(var(--card), 0.7);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
+  .dark .glass {
+    background-color: rgba(var(--card), 0.7);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
 
-.btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/25 active:shadow-none flex items-center justify-center gap-2;
-}
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/25 active:shadow-none flex items-center justify-center gap-2;
+  }
 
-.btn-secondary {
-  @apply bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-bold py-3 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2;
-}
+  .btn-secondary {
+    @apply bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-bold py-3 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2;
+  }
 
-.input-field {
-  @apply w-full px-5 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400;
+  .input-field {
+    @apply w-full px-5 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400;
+  }
 }
 
 /* Luxury UI Enhancements */
