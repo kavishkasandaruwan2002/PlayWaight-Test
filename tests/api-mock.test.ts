@@ -46,7 +46,7 @@ test.describe('Smart Travel Booking - API Mocking & Stubbing', () => {
         await page.goto('/vehicles');
 
         // Then: An error message should be displayed to the user
-        await expect(page.locator('div[role="status"]')).toContainText('Failed to load vehicles');
+        await expect(page.locator('div[role="status"]').first()).toContainText('Failed to load vehicles');
         await expect(page.getByTestId('vehicle-grid')).toBeEmpty();
     });
 

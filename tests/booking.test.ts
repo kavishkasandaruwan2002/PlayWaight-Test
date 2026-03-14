@@ -19,7 +19,7 @@ test.describe('Smart Travel Booking - Hotel & Vehicle Reservations', () => {
         await loggedInPage.getByTestId('confirm-booking-btn').click();
 
         // Then: A success message should appear and the modal should close
-        await expect(loggedInPage.locator('div[role="status"]')).toContainText('Successfully booked');
+        await expect(loggedInPage.locator('div[role="status"]').first()).toContainText('Successfully booked');
         await expect(loggedInPage.getByTestId('booking-modal')).not.toBeVisible();
 
         // When: The user navigates to the dashboard
@@ -28,7 +28,7 @@ test.describe('Smart Travel Booking - Hotel & Vehicle Reservations', () => {
         // Then: The new booking should be visible in the history list
         const bookingList = loggedInPage.getByTestId('dashboard-bookings-list');
         await expect(bookingList).toContainText('Grand Luxury Resort');
-        await expect(bookingList.locator('div[role="status"]')).toContainText('Confirmed');
+        await expect(bookingList.first()).toContainText('Confirmed');
     });
 
     test('User can rent a vehicle successfully', async ({ loggedInPage }) => {
@@ -41,7 +41,7 @@ test.describe('Smart Travel Booking - Hotel & Vehicle Reservations', () => {
         await loggedInPage.getByTestId('confirm-vehicle-booking-btn').click();
 
         // Then: Successful rental confirmation should appear
-        await expect(loggedInPage.locator('div[role="status"]')).toContainText('Successfully booked');
+        await expect(loggedInPage.locator('div[role="status"]').first()).toContainText('Successfully booked');
 
         // Check dashboard again
         await loggedInPage.goto('/dashboard');

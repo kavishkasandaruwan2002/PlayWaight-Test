@@ -1,0 +1,291 @@
+﻿{
+  "config": {
+    "configFile": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\playwright.config.ts",
+    "rootDir": "C:/Users/user/OneDrive/Desktop/PlayWaight-Test/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/user/OneDrive/Desktop/PlayWaight-Test/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/user/OneDrive/Desktop/PlayWaight-Test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api-mock.test.ts",
+      "file": "api-mock.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Smart Travel Booking - API Mocking & Stubbing",
+          "file": "api-mock.test.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Mock hotel listing API and display custom results",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2105,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-14T08:31:08.257Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e2bf4a63ea336c37a3c1-bc1ef89e96fe73e79666",
+              "file": "api-mock.test.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "Simulate server error and verify alert message",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1718,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58",
+                        "location": {
+                          "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                          "column": 58,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m\n \u001b[90m 48 |\u001b[39m         \u001b[90m// Then: An error message should be displayed to the user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'div[role=\"status\"]'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Failed to load vehicles'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'vehicle-grid'\u001b[39m))\u001b[33m.\u001b[39mtoBeEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                            "column": 58,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n\n  47 |\n  48 |         // Then: An error message should be displayed to the user\n> 49 |         await expect(page.locator('div[role=\"status\"]')).toContainText('Failed to load vehicles');\n     |                                                          ^\n  50 |         await expect(page.getByTestId('vehicle-grid')).toBeEmpty();\n  51 |     });\n  52 |\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-14T08:31:10.581Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                        "column": 58,
+                        "line": 49
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1624,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58",
+                        "location": {
+                          "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                          "column": 58,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m\n \u001b[90m 48 |\u001b[39m         \u001b[90m// Then: An error message should be displayed to the user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'div[role=\"status\"]'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Failed to load vehicles'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'vehicle-grid'\u001b[39m))\u001b[33m.\u001b[39mtoBeEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                            "column": 58,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n\n  47 |\n  48 |         // Then: An error message should be displayed to the user\n> 49 |         await expect(page.locator('div[role=\"status\"]')).toContainText('Failed to load vehicles');\n     |                                                          ^\n  50 |         await expect(page.getByTestId('vehicle-grid')).toBeEmpty();\n  51 |     });\n  52 |\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-03-14T08:31:13.851Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                        "column": 58,
+                        "line": 49
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1274,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58",
+                        "location": {
+                          "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                          "column": 58,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m\n \u001b[90m 48 |\u001b[39m         \u001b[90m// Then: An error message should be displayed to the user\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'div[role=\"status\"]'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Failed to load vehicles'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'vehicle-grid'\u001b[39m))\u001b[33m.\u001b[39mtoBeEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                            "column": 58,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div[role=\"status\"]')\nExpected substring: \u001b[32m\"Failed to load vehicles\"\u001b[39m\nError: strict mode violation: locator('div[role=\"status\"]') resolved to 2 elements:\n    1) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').first()\n    2) <div role=\"status\" aria-live=\"polite\" class=\"go3958317564\">Failed to load vehicles</div> aka getByText('Failed to load vehicles').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\"status\"]')\u001b[22m\n\n\n  47 |\n  48 |         // Then: An error message should be displayed to the user\n> 49 |         await expect(page.locator('div[role=\"status\"]')).toContainText('Failed to load vehicles');\n     |                                                          ^\n  50 |         await expect(page.getByTestId('vehicle-grid')).toBeEmpty();\n  51 |     });\n  52 |\n    at C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts:49:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2026-03-14T08:31:17.181Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry2\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\test-results\\api-mock-Smart-Travel-Book-68373-or-and-verify-alert-message-chromium-retry2\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\user\\OneDrive\\Desktop\\PlayWaight-Test\\tests\\api-mock.test.ts",
+                        "column": 58,
+                        "line": 49
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "e2bf4a63ea336c37a3c1-f947dfb00e79276b3b5f",
+              "file": "api-mock.test.ts",
+              "line": 37,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-14T08:31:03.692Z",
+    "duration": 16415.876,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

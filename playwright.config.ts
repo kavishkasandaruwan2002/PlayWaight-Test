@@ -47,12 +47,12 @@ export default defineConfig({
         {
             command: 'cd server && npm run start',
             url: 'http://localhost:5005/api/hotels',
-            reuseExistingServer: !process.env.CI,
+            reuseExistingServer: true,
         },
         {
             command: 'cd client && npm run dev',
             url: 'http://localhost:5173',
-            reuseExistingServer: !process.env.CI,
+            reuseExistingServer: true,
         }
     ],
 });
