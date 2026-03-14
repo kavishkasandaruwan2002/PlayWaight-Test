@@ -42,7 +42,7 @@ const Dashboard = () => {
                     animate={{ width: 60 }}
                     className="h-1.5 bg-blue-600 rounded-full"
                 />
-                <h1 className="text-6xl font-black text-slate-950 dark:text-white tracking-tighter" data-testid="dashboard-title">USER PORTAL</h1>
+                <h1 className="text-5xl md:text-6xl font-black text-slate-950 dark:text-white tracking-tighter" data-testid="dashboard-title">USER PORTAL</h1>
                 <p className="text-slate-500 font-medium max-w-md">Manage your elite reservations and platform status.</p>
             </div>
 
@@ -141,7 +141,7 @@ const Dashboard = () => {
                                                 <h4 className="font-black text-2xl text-slate-950 dark:text-white tracking-tight group-hover:text-blue-600 transition-colors">
                                                     {booking.hotel || booking.vehicle}
                                                 </h4>
-                                                <div className="flex items-center gap-6">
+                                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6">
                                                     <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
                                                         <Calendar size={12} className="text-slate-400" /> {new Date(booking.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}
                                                     </p>

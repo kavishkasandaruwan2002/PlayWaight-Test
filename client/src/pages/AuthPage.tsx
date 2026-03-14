@@ -61,7 +61,7 @@ const AuthPage = ({ type }: AuthPageProps) => {
                     <img
                         src={type === 'login'
                             ? "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2000"
-                            : "https://images.unsplash.com/photo-1506012733851-00f747094504?q=80&w=2000"
+                            : "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2000"
                         }
                         className="w-full h-full object-cover grayscale-[0.3] brightness-75 transition-all duration-1000"
                         alt="Travel background"
@@ -112,10 +112,10 @@ const AuthPage = ({ type }: AuthPageProps) => {
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="w-full max-w-[480px] space-y-12"
+                    className="w-full max-w-[480px] space-y-8 sm:space-y-12"
                 >
                     <div className="space-y-4">
-                        <h2 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter" data-testid="auth-title">
+                        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tighter" data-testid="auth-title">
                             {type === 'login' ? 'Welcome Back' : 'Join the Elite'}
                             <span className="text-blue-600">.</span>
                         </h2>

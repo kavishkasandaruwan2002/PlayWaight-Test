@@ -1,0 +1,63 @@
+﻿{
+  "hotels": [
+    {
+      "_id": "69a930587a6aca89a3b3d08e",
+      "name": "Grand Luxury Resort",
+      "location": "Sri Lanka",
+      "price": 250,
+      "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2000",
+      "rating": 4.8,
+      "description": "A beautiful luxury resort near the beach.",
+      "__v": 0
+    },
+    {
+      "_id": "69a930587a6aca89a3b3d08f",
+      "name": "Mountain View Inn",
+      "location": "Sri Lanka",
+      "price": 120,
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.2,
+      "description": "Relaxing stay in the mist-covered mountains.",
+      "__v": 0
+    },
+    {
+      "_id": "69a930587a6aca89a3b3d090",
+      "name": "Urban City Hotel",
+      "location": "Sri Lanka",
+      "price": 90,
+      "image": "https://plus.unsplash.com/premium_photo-1661962846017-e81816e5114d?w=500&auto=format&fit=crop&q=60",
+      "rating": 4,
+      "description": "Conveniently located in the heart of Colombo.",
+      "__v": 0
+    }
+  ],
+  "vehicles": [
+    {
+      "_id": "69a930587a6aca89a3b3d094",
+      "name": "Toyota Camry",
+      "type": "Car",
+      "price_per_day": 50,
+      "image": "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=500&auto=format&fit=crop&q=60",
+      "available": true,
+      "__v": 0
+    },
+    {
+      "_id": "69a930587a6aca89a3b3d095",
+      "name": "Honda CR-V",
+      "type": "SUV",
+      "price_per_day": 80,
+      "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad0b?w=500&auto=format&fit=crop&q=60",
+      "available": true,
+      "__v": 0
+    },
+    {
+      "_id": "69a930587a6aca89a3b3d096",
+      "name": "Vespa Scooter",
+      "type": "Bike",
+      "price_per_day": 25,
+      "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop&q=60",
+      "available": true,
+      "__v": 0
+    }
+  ]
+}
